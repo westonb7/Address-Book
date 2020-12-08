@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+
 import { Person } from '../person';
-import { PEOPLE } from '../mock-people';
+import { PersonService } from '../person.service';
+import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-people',
@@ -9,14 +11,23 @@ import { PEOPLE } from '../mock-people';
 })
 export class PeopleComponent implements OnInit {
 
-	people = PEOPLE;
+	selectedPerson: Person;
 
-  constructor() { }
+	people: Person[];
 
-  ngOnInit(): void {
+  constructor(private personService: PersonService, private messageService: MessageService) { }
+
+   ngOnInit() {
+    this.getPeople();
   }
 
   onSelect(person: Person): void {
     this.selectedPerson = person;
+    this.messageService.add(`PersonComponent: Selected contact name id=$(person.name`);
+  }
+
+  getPeople(): void {
+    this.personService.getPeople()
+        .subscribe(people => this.people = people);
   }
 }
