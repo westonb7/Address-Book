@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Person } from '../person'
+import { Person } from '../person';
+import { PEOPLE } from '../mock-people';
 
 @Component({
   selector: 'app-people',
@@ -8,16 +9,14 @@ import { Person } from '../person'
 })
 export class PeopleComponent implements OnInit {
 
-	person: Person = {
-	name: 'Jack Fenderson',
-	address: '123 N 456 W',
-	email: 'jfson@fake.temp',
-	phone: '1234567890'
-	}
+	people = PEOPLE;
 
   constructor() { }
 
   ngOnInit(): void {
   }
 
+  onSelect(person: Person): void {
+    this.selectedPerson = person;
+  }
 }
