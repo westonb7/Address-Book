@@ -32,4 +32,9 @@ export class PersonDetailComponent implements OnInit {
   goBack(): void {
     this.location.back();
   }
+
+  deletePerson() {
+    this.personService.deletePerson(this.person.id);
+    this.goBack();
+  }
 }

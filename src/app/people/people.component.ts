@@ -15,12 +15,12 @@ export class PeopleComponent implements OnInit {
 
    ngOnInit() {
     this.getPeople();
+    this.deletePerson();
     this.sortPeople();
   }
 
   getPeople(): void {
     this.retrievePeople();
-    this.sortPeople();
   }
 
   retrievePeople(): void {
@@ -36,5 +36,20 @@ export class PeopleComponent implements OnInit {
         return 1;
       return 0; 
     });
+    for (var i = 0; i < this.people.length; i++) {
+      this.people[i].id = i+1;
+    };
+  }
+
+  deletePerson() {
+    var id = this.personService.deleteId;
+    this.personService.clearDeleteId();
+    if (id != 0) {
+      for (var i = this.people.length - 1; i >= 0; --i) {
+        if (this.people[i].id == id) {
+          this.people.splice(i,1);
+        }
+      }
+    }
   }
 }
