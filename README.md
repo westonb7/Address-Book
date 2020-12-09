@@ -6,22 +6,26 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
 
-## Code scaffolding
+This should work if you have Angular cli installed. If not, it can be installed by running `npm install -g @angular/cli`
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Requirements
 
-## Build
+I created this address book for a coding asseessment for a company I applied to work for. Their specific requirements for the project are as follows:
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+For the purpose of this assignment, *there is no need to provide a persistent backend, data can be stored in memory.*
 
-## Running unit tests
+Basic requirements:
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+• Ability to add, edit, and delete contacts
 
-## Running end-to-end tests
+• Contacts should have a minimum set of fields:
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- Name
 
-## Further help
+- Address
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+- Email
+
+- Phone
+
+• Ability to view all contacts in a list sorted alphabetically by name
