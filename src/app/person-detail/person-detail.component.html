@@ -1,0 +1,19 @@
+<div *ngIf="person">
+  <h2>{{person.name | uppercase}} Details</h2>
+  <div>
+    <label>name:
+      <input [(ngModel)]="person.name" placeholder="name"/>
+    </label>
+    <label>address:
+      <input [(ngModel)]="person.address" placeholder="address"/>
+    </label>
+    <label>email:
+      <input [(ngModel)]="person.email" placeholder="email"/>
+    </label>
+    <label>phone:
+      <input [(ngModel)]="person.phone" placeholder="phone"/>
+    </label>
+  </div>
+  <button (click)="deletePerson()">Delete Contact</button>
+  <button (click)="goBack()">Back</button>
+</div>
