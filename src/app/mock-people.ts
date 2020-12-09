@@ -1,7 +1,34 @@
 import { Person } from './person';
 
 export const PEOPLE: Person[] = [
-	{ name: 'Jack Fenderson', address: '123 N 456 W', email: 'jf@fake.temp', phone: '1234567890' },
-	{ name: 'John Johnson', address: '111 N 111 W', email: 'jj@fake.temp', phone: '1111111111' },
-	{ name: 'Jane Janerman', address: '222 N 222 W', email: 'jamin@fake.temp', phone: '2222222222' }
+	{ id: 1, 
+		name: 'Jack Fenderson', 
+		address: '123 N 456 W', 
+		email: 'jf@fake.temp', 
+		phone: '1234567890' },
+	{ id: 2, 
+		name: 'John Johnson', 
+		address: '111 N 111 W', 
+		email: 'jj@fake.temp', 
+		phone: '1111111111' },
+	{ id: 3, 
+		name: 'Jane Janerman', 
+		address: '222 N 222 W', 
+		email: 'jamin@fake.temp', 
+		phone: '2222222222' },
+	{ id: 4, 
+		name: 'Bob Fenderson', 
+		address: '444 N 444 W', 
+		email: 'bub@fake.temp', 
+		phone: '4444444444' },
+	{ id: 5, 
+		name: 'Roy Johnson', 
+		address: '555 N 555 W', 
+		email: 'roy@fake.temp', 
+		phone: '5555555555' },
+	{ id: 6, 
+		name: 'Lisa Liserman', 
+		address: '66 N 66 W', 
+		email: 'lisa@fake.temp', 
+		phone: '6666666666' }
 ];

@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 
 import { Person } from '../person';
 import { PersonService } from '../person.service';
-import { MessageService } from '../message.service';
 
 @Component({
   selector: 'app-people',
@@ -10,24 +9,32 @@ import { MessageService } from '../message.service';
   styleUrls: ['./people.component.css']
 })
 export class PeopleComponent implements OnInit {
-
-	selectedPerson: Person;
-
 	people: Person[];
 
-  constructor(private personService: PersonService, private messageService: MessageService) { }
+  constructor(private personService: PersonService) { }
 
    ngOnInit() {
     this.getPeople();
-  }
-
-  onSelect(person: Person): void {
-    this.selectedPerson = person;
-    this.messageService.add(`PersonComponent: Selected contact name id=$(person.name`);
+    this.sortPeople();
   }
 
   getPeople(): void {
-    this.personService.getPeople()
-        .subscribe(people => this.people = people);
+    this.retrievePeople();
+    this.sortPeople();
+  }
+
+  retrievePeople(): void {
+    this.personService.getPeople().subscribe(people => this.people = people);
+  }
+
+  sortPeople() {
+    this.people.sort(function(a, b) {
+      var nameA = a.name.toLowerCase(), nameB = b.name.toLowerCase();
+      if (nameA < nameB) //sort string ascending
+        return -1;
+      if (nameA > nameB)
+        return 1;
+      return 0; 
+    });
   }
 }

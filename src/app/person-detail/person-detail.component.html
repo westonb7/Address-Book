@@ -1,5 +1,4 @@
 <div *ngIf="person">
-
   <h2>{{person.name | uppercase}} Details</h2>
   <div>
     <label>name:
@@ -15,5 +14,5 @@
       <input [(ngModel)]="person.phone" placeholder="phone"/>
     </label>
   </div>
-
+  <button (click)="goBack()">go back</button>
 </div>
