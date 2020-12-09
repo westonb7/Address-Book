@@ -52,4 +52,18 @@ export class PeopleComponent implements OnInit {
       }
     }
   }
+
+  addPerson() {
+    var person: Person = {
+      id: 0,
+      name: 'New Contact',
+      address: '',
+      email: '',
+      phone: ''
+    };
+
+    this.people.push(person);
+    this.sortPeople();
+  }
+
 }
